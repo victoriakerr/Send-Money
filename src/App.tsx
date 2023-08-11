@@ -12,7 +12,7 @@ function App() {
       async function calculateRemittanceCost() {
         try {
           const response = await fetch(
-            `https://api-uct.mukuru.com/taurus/v1/products/price-check?pay_in_country=${selectedCountry.iso2}&pay_out_country=${selectedProduct.destinationCountry.iso2}&pay_in_currency=CURRENCY1&pay_out_currency=CURRENCY2&type=${selectedProduct.id}`
+            `https://api-uct.mukuru.com/taurus/v1/products/price-check?pay_in_country=${selectedCountry.iso2}&pay_out_country=${selectedProduct.destinationCountry.iso2}&pay_in_currency=ZAR&pay_out_currency=ZAR&type=${selectedProduct.id}`
           );
 
           const data = await response.json();
@@ -36,7 +36,7 @@ function App() {
       {remittanceCost !== null && (
         <div>
           <h2>Remittance Cost</h2>
-          <p>{remittanceCost}</p>
+          <p>{remittanceCost} ZAR</p>
         </div>
       )}
     </div>
